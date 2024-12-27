@@ -24,6 +24,7 @@ COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 
 EXPOSE 8545 8546 30303 30303/udp
 ENTRYPOINT ["geth"]
+CMD ["--dev", "--http", "--rpc", "--rpcapi", "web3,eth,net,personal", "--rpcaddr", "0.0.0.0", "--rpcport", "8545"]
 
 # Add some metadata labels to help programmatic image consumption
 # ARG COMMIT=""

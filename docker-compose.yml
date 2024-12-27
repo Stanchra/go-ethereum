@@ -4,7 +4,6 @@ services:
     container_name: devnet
     ports:
       - "8545:8545"  # Exposing RPC endpoint for interaction according to official documentation
-    command: ["geth", "--dev", "--http", "--http.api", "web3,eth,net,personal", "--http.addr", "0.0.0.0", "--http.port", "8545"]
     networks:
       - devnet_network
 
