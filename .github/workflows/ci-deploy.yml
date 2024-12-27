@@ -44,7 +44,7 @@ jobs:
           cd hardhat
           npm install
           export HARDHAT_IGNITION_CONFIRM_DEPLOYMENT=false
-          npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost --yes
+          npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost
           npx hardhat test
 
       # Stop the container and cleanup
