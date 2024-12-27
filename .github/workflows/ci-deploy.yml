@@ -36,6 +36,7 @@ jobs:
       
       - name: Run the local Devnet
         run: |
+          export DOCKER_HUB_USER=${{ secrets.DOCKER_USERNAME }}
           docker compose up -d
       
       - name: Install dependencies and Deploy Contracts
@@ -43,7 +44,7 @@ jobs:
           cd hardhat
           npm install
           npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost --verify
-          
+
       # Stop the container and cleanup
       - name: Stop Devnet container
         run: |
