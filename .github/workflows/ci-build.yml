@@ -10,7 +10,7 @@ jobs:
   build:
     # Run the jobs only if the PR is merged and the label 'CI:Build' is present
     if: contains(github.event.pull_request.labels.*.name, 'CI:Build') && github.event.pull_request.merged == true
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
