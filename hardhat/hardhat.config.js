@@ -4,8 +4,8 @@ require("@nomicfoundation/hardhat-toolbox");
 module.exports = {
   solidity: "0.8.28",
   networks: {
-  docker: {
-    url: "http://devnet:8545",
+    localhost: {
+      url: "http://localhost:8545",
     },
   },
 };
