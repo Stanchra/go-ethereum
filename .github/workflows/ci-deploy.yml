@@ -43,9 +43,9 @@ jobs:
         run: |
           cd hardhat
           npm install
-          npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost
+          npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost --yes
 
       # Stop the container and cleanup
       - name: Stop Devnet container
         run: |
-          docker-compose down  # Stops the containers and removes the network
+          docker compose down  # Stops the containers and removes the network
