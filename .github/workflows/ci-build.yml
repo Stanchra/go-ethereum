@@ -71,9 +71,17 @@ jobs:
           export DOCKER_HUB_USER=${{ secrets.DOCKER_USERNAME }}
           docker-compose up -d
 
+      - name: Check the status of the container
+        run: |
+          docker ps
+
+      - name: Check the container logs
+        run: |
+          docker logs devnet
+
       - name: Verify Devnet
         run: |
-          sleep 10  # Allow time for the devnet to start
+          sleep 30  # Allow time for the devnet to start
           curl -X POST -H "Content-Type: application/json" \
           --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' \
           http://localhost:8545
