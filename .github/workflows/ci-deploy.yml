@@ -42,7 +42,6 @@ jobs:
       - name: Install dependencies and Deploy Contracts
         run: |
           cd hardhat
-          npm install
           npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost --verify
 
       # Stop the container and cleanup
