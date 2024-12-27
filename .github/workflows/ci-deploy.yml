@@ -44,6 +44,7 @@ jobs:
           cd hardhat
           npm install
           export HARDHAT_IGNITION_CONFIRM_DEPLOYMENT=false
+          npx hardhat node --port 8546
           npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost
           npx hardhat test
 
