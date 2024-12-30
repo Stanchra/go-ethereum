@@ -5,7 +5,7 @@ module.exports = {
   solidity: "0.8.28", // You can adjust the version as necessary
   networks: {
     devnet: {
-      url: "http://localhost:8545",  // Ensure this matches the exposed port of Geth in Docker
+      url: "http://localhost:8545",
     }
   }
 };
