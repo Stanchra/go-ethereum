@@ -7,8 +7,7 @@ async function main() {
   const MyToken = await hre.ethers.getContractFactory("MyToken");
   const myToken = await MyToken.deploy();
 
-  await myToken.deployTransaction.wait(); // Wait for the transaction to be mined
-
+  await myToken.deployed();
   console.log("MyToken deployed to:", myToken.address);
 }
 
