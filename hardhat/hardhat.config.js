@@ -1,4 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('@nomicfoundation/hardhat-ethers');
+require('@nomicfoundation/hardhat-ignition-ethers');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
