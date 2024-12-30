@@ -40,13 +40,14 @@ jobs:
           docker compose up -d
           docker ps -a
           docker port devnet
+          docker logs devnet
       
       - name: Install dependencies and Deploy Contracts
         run: |
           cd hardhat
           npm install
           export HARDHAT_IGNITION_CONFIRM_DEPLOYMENT=false
-          npx hardhat ignition deploy ./ignition/modules/Token.js --network devnet
+          npx hardhat ignition deploy ./ignition/modules/Token.js --network devnet --verbose
 
       # Stop the container and cleanup
       - name: Stop Devnet container
