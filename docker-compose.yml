@@ -10,5 +10,5 @@ services:
       - devnet_network
 
 networks:
-  devnet_network:
-    driver: bridge
+  - devnet_network
+network_mode: host  # Use host network mode
