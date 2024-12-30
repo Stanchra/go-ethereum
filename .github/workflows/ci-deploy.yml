@@ -52,8 +52,7 @@ jobs:
           npm install
           export HARDHAT_IGNITION_CONFIRM_DEPLOYMENT=false
           npx hardhat check
-          npx hardhat compile
-          npx hardhat ignition deploy ./ignition/modules/Token.js --network devnet --verbose
+          npx hardhat run scripts/deploy.js --network devnet
 
       # Stop the container and cleanup
       - name: Stop Devnet container
