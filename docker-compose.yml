@@ -6,9 +6,10 @@ services:
       - "8545:8545" # Exposing RPC endpoint for interaction according to official documentation
       - "8546:8546"
       - "30303:30303"
-    networks:
-      - devnet_network
+    network_mode: "host"  # Use host network mode
+    #networks:
+    #  - devnet_network
 
-networks:
-  - devnet_network
-network_mode: host  # Use host network mode
+#networks:
+ # - devnet_network
+
