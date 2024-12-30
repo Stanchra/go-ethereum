@@ -41,9 +41,10 @@ jobs:
           docker ps -a
           docker port devnet
           docker logs devnet
+          sleep 10
           curl -X POST -H "Content-Type: application/json" \
             --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' \
-            http://localhost:8545
+            http://127.0.0.1:8545
       
       - name: Install dependencies and Deploy Contracts
         run: |
