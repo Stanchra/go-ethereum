@@ -38,14 +38,15 @@ jobs:
         run: |
           export DOCKER_HUB_USER=${{ secrets.DOCKER_USERNAME }}
           docker compose up -d
+          docker ps -a
+          docker port devnet
       
       - name: Install dependencies and Deploy Contracts
         run: |
           cd hardhat
           npm install
           export HARDHAT_IGNITION_CONFIRM_DEPLOYMENT=false
-          npx hardhat ignition deploy ./ignition/modules/Token.js --network localhost
-          npx hardhat test
+          npx hardhat ignition deploy ./ignition/modules/Token.js --network devnet
 
       # Stop the container and cleanup
       - name: Stop Devnet container
