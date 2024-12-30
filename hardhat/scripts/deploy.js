@@ -1,14 +1,13 @@
-const { ethers } = require("hardhat");
+const hre = require("hardhat");
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const [deployer] = await hre.ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const MyToken = await ethers.getContractFactory("MyToken");
+  const MyToken = await hre.ethers.getContractFactory("MyToken");
   const myToken = await MyToken.deploy();
 
-  // Wait until the contract is deployed
-  await myToken.deployed();
+  await myToken.deployTransaction.wait(); // Wait for the transaction to be mined
 
   console.log("MyToken deployed to:", myToken.address);
 }
