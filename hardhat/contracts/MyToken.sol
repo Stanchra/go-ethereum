@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Token {
+contract MyToken {
     string public name = "MyToken";
     string public symbol = "MTK";
     uint256 public totalSupply = 1000000;
