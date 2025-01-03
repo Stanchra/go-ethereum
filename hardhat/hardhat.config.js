@@ -6,6 +6,7 @@ module.exports = {
   networks: {
     devnet: {
       url: `http://127.0.0.1:8545`,
+      gasPrice: 30000000000,
     },
   },
 };
